@@ -156,8 +156,6 @@ const createScene = async function () {
   const scene = new BABYLON.Scene(engine);
   scene.collisionsEnabled = true;
 
-  scene.debugLayer.show();
-
   await BABYLON.SceneLoader.AppendAsync("./models/", "room.babylon", scene);
 
   const camera = new BABYLON.FreeCamera(
