@@ -232,43 +232,45 @@ const createScene = async function () {
   return scene;
 };
 
-const scene = await createScene();
+(async () => {
+  const scene = await createScene();
 
-scene.onPointerUp = function (evt, pickResult) {
-  if (pickResult.hit) {
-    if (data[pickResult.pickedMesh?.name ?? ""]) {
-      openInNewTab(data[pickResult.pickedMesh.name].link);
-    }
-  }
-};
-
-let prevPick;
-
-scene.onPointerMove = function (evt, pickResult) {
-  const meshPicked = pickResult?.pickedMesh;
-  if (prevPick !== meshPicked) {
-    prevPick = meshPicked;
-    if (meshPicked != null) {
-      const paintingName = meshPicked.name;
-      if (data.hasOwnProperty(paintingName)) {
-        guiBG.isVisible = true;
-        guiTitle.text = data[paintingName].title;
-        guiDescription.text = data[paintingName].description;
+  scene.onPointerUp = function (evt, pickResult) {
+    if (pickResult.hit) {
+      if (data[pickResult.pickedMesh?.name ?? ""]) {
+        openInNewTab(data[pickResult.pickedMesh.name].link);
       }
-    } else {
-      guiBG.isVisible = false;
-      guiTitle.text = "";
-      guiDescription.text = "";
     }
-  }
-};
+  };
 
-// Register a render loop to repeatedly render the scene
-engine.runRenderLoop(function () {
-  scene.render();
-});
+  let prevPick;
 
-// Watch for browser/canvas resize events
-window.addEventListener("resize", function () {
-  engine.resize();
-});
+  scene.onPointerMove = function (evt, pickResult) {
+    const meshPicked = pickResult?.pickedMesh;
+    if (prevPick !== meshPicked) {
+      prevPick = meshPicked;
+      if (meshPicked != null) {
+        const paintingName = meshPicked.name;
+        if (data.hasOwnProperty(paintingName)) {
+          guiBG.isVisible = true;
+          guiTitle.text = data[paintingName].title;
+          guiDescription.text = data[paintingName].description;
+        }
+      } else {
+        guiBG.isVisible = false;
+        guiTitle.text = "";
+        guiDescription.text = "";
+      }
+    }
+  };
+
+  // Register a render loop to repeatedly render the scene
+  engine.runRenderLoop(function () {
+    scene.render();
+  });
+
+  // Watch for browser/canvas resize events
+  window.addEventListener("resize", function () {
+    engine.resize();
+  });
+})();
