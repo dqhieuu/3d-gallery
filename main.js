@@ -85,12 +85,11 @@ const data = {
     link: "https://ecommerce.uetbc.xyz/product/pikachu/",
   },
   painting3: {
-    resource: "img/painting3.webp",
-    resourceSize: 300,
-    title: "Tranh Totoro",
-    description:
-      "Gia đình Kusakabe chuyển về vùng thôn quê sinh sống. Căn nhà mới mà họ sắp ở dân làng đồn đại là bị ma ám. Nhưng điều ấy chẳng làm lay chuyển nỗi tò mò, hiếu động của hai chị em nhà Kusakabe: Satsuki và Mei. Tại ngôi nhà mới, Satsuki và Mei kết thân với bà hàng xóm tốt bụng tên Nanny và cậu bé Kanta, cùng tuổi với Satsuki.",
-    link: "https://ecommerce.uetbc.xyz/product/totoro/",
+    resource: "img/painting3.png",
+    resourceSize: 900,
+    title: "Tranh Wibu Hentai",
+    description: `Mô tả: Một "con người" có gu lạ thường (theo chiều hướng không tốt)`,
+    link: "https://nhentai.net/",
   },
   painting4: {
     resource: "img/painting4.webp",
