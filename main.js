@@ -89,7 +89,7 @@ const data = {
     resourceSize: 900,
     title: "Tranh ai đó",
     description: `Mô tả: Ai đó`,
-    link: "https://nhentai.net/",
+    link: "https://uet.vnu.edu.vn/",
   },
   painting4: {
     resource: "img/painting4.webp",
