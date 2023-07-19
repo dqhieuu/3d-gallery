@@ -87,8 +87,8 @@ const data = {
   painting3: {
     resource: "img/painting3.png",
     resourceSize: 900,
-    title: "Tranh Wibu Hentai",
-    description: `Mô tả: Một "con người" có gu lạ thường (theo chiều hướng không tốt)`,
+    title: "Tranh ai đó",
+    description: `Mô tả: Ai đó`,
     link: "https://nhentai.net/",
   },
   painting4: {
